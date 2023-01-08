@@ -1,18 +1,16 @@
 import './App.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import { getPosts } from './redux/action/actionCreator';
+
+import Articles from './components/articles';
 
 function App() {
   const store = useSelector(store => store);
-  const dispatch= useDispatch();
- 
-  const handlePosts = ()=>{
-  dispatch(getPosts());
-  }
-
+  
+  
   return (
     <div className="App">
-      <button onClick={handlePosts}>Get Posts</button>
+      
+      <Articles/>
     </div>
   );
 }
