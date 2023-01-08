@@ -1,4 +1,4 @@
-import {takeLatest, put, call} from "redux-saga/effects"
+import {takeLatest, put, call, select} from "redux-saga/effects"
 import  getPosts  from "../../api"
 import { GET_POSTS } from "../constants";
 import {setPosts} from "../action/actionCreator"
@@ -7,6 +7,8 @@ export function* workerSaga() {
     const data = yield call(getPosts) ;
    
     yield put(setPosts(data));
+    const StoreEntry= yield select();
+   console.log(StoreEntry);
 }
 
 export function* watchClickSaga() {
