@@ -1,5 +1,5 @@
 import './App.scss';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import Articles from './components/articles';
 
