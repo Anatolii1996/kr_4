@@ -1,11 +1,10 @@
 import { combineReducers } from "redux";
+import posts from "./posts";
 
-const test = (state={}, action)=>{
-    return state;
-}
+
 
 const reducer = combineReducers({
-    test,
+    posts,
 });
 
 export default reducer;
