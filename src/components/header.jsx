@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -8,33 +8,23 @@ const Header = () => {
           <Link to="/" className="navbar-brand">
             React example
           </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to="/" className="nav-link active">
+                <NavLink end to="/" className="nav-link">
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link to="/user" className="nav-link">
+                <NavLink to="/user" className="nav-link">
                   Users
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link to="/photos" className="nav-link">
+                <NavLink to="/photos" className="nav-link">
                   Photos
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
