@@ -1,16 +1,13 @@
 import { SET_POSTS } from "../constants";
 
-const initialState = {
-    posts: [],
-};
+const initialState = [];
 
 const posts = (state = initialState, { type, payload }) => {
+    //console.log(payload);
     switch (type) {
         case SET_POSTS:
-            return {
-                ...state,
-                posts: [...state.posts, ...payload],
-            };
+            return payload;
+            
         default: return state;
     }
 };

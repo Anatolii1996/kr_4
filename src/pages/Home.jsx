@@ -1,14 +1,13 @@
-import Articles from '../components/articles';
-import Cards from '../components/cards';
-import Header from '../components/header';
+import Articles from "../components/articles";
+import Cards from "../components/cards";
+import Header from "../components/header";
 
-const Home =()=>{
-return(
+const Home = () => {
+  return (
     <>
-   
+      <Cards />
       <Articles />
-      <Cards/></>
-    
-)
+    </>
+  );
 };
 export default Home;

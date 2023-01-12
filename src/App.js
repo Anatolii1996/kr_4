@@ -1,5 +1,5 @@
-import './App.scss';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import './App.scss';
 import { useSelector } from 'react-redux';
 import Home from './pages/Home';
 import User from './pages/User';

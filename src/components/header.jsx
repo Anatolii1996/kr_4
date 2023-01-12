@@ -3,8 +3,8 @@ import { Link, Outlet, NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-light">
-        <div className="container-fluid">
+      <nav className="navbar navbar-expand-lg bg-dark ">
+        <div className="container-fluid ">
           <Link to="/" className="navbar-brand">
             React example
           </Link>
@@ -12,7 +12,7 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <NavLink end to="/" className="nav-link">
+                <NavLink end to="/" className="nav-link ">
                   Home
                 </NavLink>
               </li>
