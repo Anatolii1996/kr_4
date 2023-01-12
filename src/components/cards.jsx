@@ -11,7 +11,7 @@ function Cards() {
         return (
           <div className="card app-card" key={id}>
             <div className="card-body">
-              <h5 className="card-title">{title}</h5>
+              <h5 className="card-title title">{title}</h5>
               <p className="card-text">{body}</p>
               <div className="buttons">
                 <button className="btn">View</button>

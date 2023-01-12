@@ -24,8 +24,29 @@
   border-radius: 0;
   margin: 15px 20px;
   text-align: justify;
+  .card-body{
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .card-title {
+ display: block;
     text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+ padding: 5px;
+  }
+  .card-text{
+    display: block;
+    height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    
+
+    
   }
 }
 .btn {
