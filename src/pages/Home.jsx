@@ -1,8 +1,13 @@
-import Articles from "../components/articles";
 import Cards from "../components/cards";
-import Header from "../components/header";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getPosts } from "../redux/action/actionCreator";
 
 const Home = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getPosts());
+  }, []);
   return (
     <>
       <div className="home-header">
@@ -13,7 +18,7 @@ const Home = () => {
         </div>
       </div>
       <Cards />
-      <Articles />
+      {/* <Articles /> */}
       <button className="btn btn-info btn_footer">Show more</button>
     </>
   );

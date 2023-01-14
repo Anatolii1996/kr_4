@@ -74,5 +74,8 @@
     border-radius: 0;
     line-height: 1;
     padding: 5px;
+    &:hover{
+      border: 0;
+    }
   }
 }
