@@ -12,6 +12,26 @@
 .nav-link:hover, .navbar-brand:hover {
   color: orangered;
 }
+.home-title{
+  font-size: 24px;
+}
+.home-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 70px;
+  .btn{
+    margin-left: 15px;
+    border-radius: 5px;
+    border: 0;
+  }
+}
+.btn_footer{
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: 0;
+  margin-bottom: 30px;
+}
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -38,23 +58,21 @@
   }
   .card-text{
     display: block;
-    height: 100px;
+    height: 75px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    
-
-    
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;   
   }
 }
-.btn {
-  border: 1px solid gray;
-  border-radius: 0;
-  line-height: 1;
-  padding: 5px;
-}
+
 .buttons {
   text-align: center;
+  .btn {
+    border: 1px solid gray;
+    border-radius: 0;
+    line-height: 1;
+    padding: 5px;
+  }
 }
