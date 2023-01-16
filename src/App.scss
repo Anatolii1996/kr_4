@@ -44,10 +44,7 @@
   border-radius: 0;
   margin: 15px 20px;
   text-align: justify;
-  .card-body{
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+ 
   .card-title {
  display: block;
     text-align: center;
@@ -58,12 +55,15 @@
   }
   .card-text{
     display: block;
-    height: 75px;
+   // height: 75px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;   
+  }
+  .photo-img{
+    width: 230px;
   }
 }
 
@@ -79,6 +79,4 @@
     }
   }
 }
-.none{
-  display: none;
-}
+

@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 const Home = () => {
   const { posts } = useSelector((state) => state);
   const [countPost, setCountPost] = useState(3);
+  const []=useState("small");
   const showingPosts =posts ? posts.slice(0, countPost) : [];
 
   const dispatch = useDispatch();

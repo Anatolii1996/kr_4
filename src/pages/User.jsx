@@ -1,17 +1,34 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getUsers } from "../redux/action/actionCreator";
+import Cards from "../components/cards";
 
-const User=()=>{
-    const dispatch = useDispatch();
+const User = () => {
+  const { users } = useSelector((state) => state);
+  const [countUser, setCountUser] = useState(3);
+  const showingPosts = users ? users.slice(0, countUser) : [];
+
+  const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUsers());
   }, []);
 
-  const {users} = useSelector((state) => state);
-
-    return(
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem nulla explicabo, perferendis ducimus quod voluptatum esse consequatur aspernatur quis quibusdam sequi neque porro voluptatibus distinctio optio quidem sed reprehenderit! In!</p>
-    )
+  return (
+    <>
+      <Cards showingPosts={showingPosts} />
+      {countUser < users.length ? (
+        <button
+          className="btn btn-info btn_footer"
+          onClick={() => {
+            setCountUser(countUser + 3);
+          }}
+        >
+          Show more
+        </button>
+      ) : (
+        ""
+      )}
+    </>
+  );
 };
 export default User;
