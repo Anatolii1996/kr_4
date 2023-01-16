@@ -1,8 +1,7 @@
 import Cards from "../components/cards";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
 import { getPosts } from "../redux/action/actionCreator";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 const Home = () => {
   const { posts } = useSelector((state) => state);

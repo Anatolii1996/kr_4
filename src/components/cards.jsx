@@ -15,7 +15,7 @@ function Cards({ showingPosts}) {
                 <button className="btn">Edit</button>
               </div>
             </div>
-          </div>
+          </div>         
         );
       })}
     </div>
