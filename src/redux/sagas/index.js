@@ -1,7 +1,7 @@
 import { put, call, takeEvery } from "redux-saga/effects"
-import {getPosts, getUsers} from "../../api"
-import { GET_POSTS, GET_USERS } from "../constants";
-import { setPosts, setUsers } from "../action/actionCreator"
+import {getPosts, getUsers, getPhotos} from "../../api"
+import { GET_POSTS, GET_USERS, GET_PHOTOS } from "../constants";
+import { setPosts, setUsers, setPhotos } from "../action/actionCreator"
 
 
 export function* workerSaga() {
@@ -9,23 +9,19 @@ export function* workerSaga() {
     yield put(setPosts(data));
 }
 
-// export function* watchClickSaga() {
-//     yield takeLatest(GET_POSTS, workerSaga);
-// }
-
 export function* workGetUserSaga(){
     const data = yield call(getUsers);
-    //console.log(data);
     yield put(setUsers(data));
 }
 
-// export function* watchGetUserSaga(){
-//     yield takeLatest(GET_USERS, workGetUserSaga);
-// }
+export function* workGetPhotosSaga(){
+    const data = yield call(getPhotos);
+    yield put(setPhotos(data));
+}
 
 export default function* rootSaga() {
     yield takeEvery(GET_POSTS, workerSaga);
     yield takeEvery(GET_USERS, workGetUserSaga);
-    
-    
+    yield takeEvery(GET_PHOTOS, workGetPhotosSaga); 
+       
 }
