@@ -1,4 +1,4 @@
-import { takeLatest, put, call } from "redux-saga/effects"
+import { put, call, takeEvery } from "redux-saga/effects"
 import {getPosts, getUsers} from "../../api"
 import { GET_POSTS, GET_USERS } from "../constants";
 import { setPosts, setUsers } from "../action/actionCreator"
@@ -9,9 +9,9 @@ export function* workerSaga() {
     yield put(setPosts(data));
 }
 
-export function* watchClickSaga() {
-    yield takeLatest(GET_POSTS, workerSaga);
-}
+// export function* watchClickSaga() {
+//     yield takeLatest(GET_POSTS, workerSaga);
+// }
 
 export function* workGetUserSaga(){
     const data = yield call(getUsers);
@@ -19,13 +19,13 @@ export function* workGetUserSaga(){
     yield put(setUsers(data));
 }
 
-export function* watchGetUserSaga(){
-    yield takeLatest(GET_USERS, workGetUserSaga);
-}
+// export function* watchGetUserSaga(){
+//     yield takeLatest(GET_USERS, workGetUserSaga);
+// }
 
 export default function* rootSaga() {
-    yield watchClickSaga();
-    yield watchGetUserSaga();
+    yield takeEvery(GET_POSTS, workerSaga);
+    yield takeEvery(GET_USERS, workGetUserSaga);
     
     
 }
