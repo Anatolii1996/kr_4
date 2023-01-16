@@ -1,9 +1,8 @@
 import { SET_POSTS } from "../constants";
-
 const initialState = [];
 
-const posts = (state = initialState, { type, payload }) => {
-    //console.log(payload);
+export const posts = (state = initialState, { type, payload }) => {
+    
     switch (type) {
         case SET_POSTS:
             return payload;
@@ -12,4 +11,3 @@ const posts = (state = initialState, { type, payload }) => {
     }
 };
 
-export default posts;

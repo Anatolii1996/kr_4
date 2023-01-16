@@ -1,13 +1,20 @@
 import Cards from "../components/cards";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getPosts } from "../redux/action/actionCreator";
+import { useSelector } from "react-redux";
 
 const Home = () => {
+  const { posts } = useSelector((state) => state);
+  const [countPost, setCountPost] = useState(3);
+  const showingPosts =posts ? posts.slice(0, countPost) : [];
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getPosts());
   }, []);
+  
+
   return (
     <>
       <div className="home-header">
@@ -17,9 +24,20 @@ const Home = () => {
           <button className="btn btn-info">Add articles</button>
         </div>
       </div>
-      <Cards />
-      {/* <Articles /> */}
-      <button className="btn btn-info btn_footer">Show more</button>
+      <Cards countPost={countPost} showingPosts={showingPosts}/>
+      {countPost<posts.length ? 
+          <button
+          className="btn btn-info btn_footer"
+          onClick={() => {
+            setCountPost(countPost + 3);
+          }}
+        >
+          Show more
+        </button>
+        :
+        ""
+      }
+      
     </>
   );
 };

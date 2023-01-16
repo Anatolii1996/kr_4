@@ -1,13 +1,9 @@
-import { key } from "localforage";
-import { useSelector } from "react-redux";
 
-function Cards() {
-  const { posts } = useSelector((state) => state);
+function Cards({ showingPosts}) {
   
-
   return (
     <div className="cards">
-      {posts.map(({ title, body, id }) => {
+      {showingPosts.map(({ title, body, id }) => {
         return (
           <div className="card app-card" key={id}>
             <div className="card-body">
