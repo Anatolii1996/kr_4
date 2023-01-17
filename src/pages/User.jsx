@@ -2,10 +2,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getUsers } from "../redux/action/actionCreator";
 import Cards from "../components/cards";
+import Modal from "../modal/modal";
 
 const User = () => {
   const { users } = useSelector((state) => state);
   const [countUser, setCountUser] = useState(3);
+  const [modalActive, setModalActive] = useState(true);
   const showingPosts = users ? users.slice(0, countUser) : [];
 
   const dispatch = useDispatch();

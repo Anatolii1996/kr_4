@@ -1,0 +1,15 @@
+.modal{
+    width: 100vw;
+    height: 100vh;
+    background-color: grey;
+    position: fixed;
+    top: 0;
+    left: 0;
+    .modal-content{
+        padding: 20px;
+        border-radius: 12px;
+        background-color: white;
+        height: 200px;
+        width: 400px;
+    }
+}
