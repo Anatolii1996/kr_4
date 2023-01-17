@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { getPosts } from "../redux/action/actionCreator";
 import { useSelector, useDispatch } from "react-redux";
 import Modal from "../modal/modal";
+import Buttons from "../components/buttons";
 
 const Home = () => {
   const { posts } = useSelector((state) => state);
@@ -20,28 +21,7 @@ const Home = () => {
     <>
       <div className="home-header">
         <h1 className="home-title">Article list</h1>
-        <div>
-          <button className="btn btn-info">Add articles</button>
-          {bigView ? (
-        <button
-          className="btn btn-info"
-          onClick={() => {
-            setBigView(false);
-          }}
-        >
-          Make small cards
-        </button>
-      ) : (
-        <button
-          className="btn btn-info"
-          onClick={() => {
-            setBigView(true);
-          }}
-        >
-          Make big cards
-        </button>
-      )}
-        </div>
+       <Buttons bigView={bigView} setBigView={setBigView}/>
       </div>
       
 
